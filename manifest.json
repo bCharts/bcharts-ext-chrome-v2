@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "bChart Page Cropper",
+  "description": "bChart Page Cropper",
+  "version": "1.0",
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "<all_urls>",
+    "tabs"
+  ],
+  "web_accessible_resources": [
+    "pulltable/images/cancel.png",
+    "pulltable/images/ok.png",
+    "pulltable/images/flybeefly.gif",
+    "pulltable/css/cropinterface.css",
+    "pulltable/css/excel-2000.css"
+  ],
+  "background": {
+    "scripts": [
+      "pulltable/js/jquery.js",
+      "pulltable/js/background.js"
+    ]
+  }
+}
