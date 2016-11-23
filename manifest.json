@@ -1,0 +1,36 @@
+{
+  "manifest_version": 2,
+  "name": "bCharts.xyz - Chart Anything",
+  "description": "bCharts.xyz is the simplest charting tool. Use this extension to enhance your experience and pull data from anywhere on the web!",
+  "version": "1.2",
+  "browser_action": {
+    "default_icon": "resourses/img/beelogo.png",
+    "default_popup": "popup/popup.html",
+    "default_title": "bCharts.xyz - Chart Anything"
+  },
+   "icons" : {
+      "128" : "resourses/img/beelogo.png"
+    },
+  "permissions": [
+    "http://*/*",
+    "https://*/*",
+    "<all_urls>",
+    "tabs"
+  ],
+  "web_accessible_resources": [
+    "*.png",
+    "parsehtml/css/background.css",
+    "pulltable/images/cancel.png",
+    "pulltable/images/ok.png",
+    "pulltable/images/flybeefly.gif",
+    "pulltable/css/cropinterface.css",
+    "pulltable/css/excel-2000.css"
+  ],
+  "background": {
+    "scripts": [
+      "pulltable/js/jquery.js",
+      "pulltable/js/background.js",
+      "parsehtml/js/background.js"
+    ]
+  }
+}
