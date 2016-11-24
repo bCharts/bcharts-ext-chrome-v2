@@ -77,8 +77,8 @@ cropinterface.ok_button.jqo().click(function (e) {
 
             chrome.runtime.sendMessage({'type': 'pulltable', 'data': data}, function (response) {
                 cropinterface.remove_progress_view();
-                $(cropinterface.result_view.html(response.data, false)).appendTo(document.body);
-                cropinterface.result_view.resize_result_table();
+                // $(cropinterface.result_view.html(response.data, false)).appendTo(document.body);
+                // cropinterface.result_view.resize_result_table();
                 console.log(response.data);
                 // cropinterface.remove_all();
             });
