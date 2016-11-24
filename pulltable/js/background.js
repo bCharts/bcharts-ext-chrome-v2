@@ -26,12 +26,14 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
                 },
                 dataType: 'text',
                 success: function (data, textStatus, jqXHR) {
+                    var retval = $.parseJSON(data);
                     chrome.tabs.create({
-                        url: data
+                        url: retval.url
                     });
+
                     sendResponse({
-                        'result': 'ok',
-                        'data': data
+                        'result': retval.result,
+                        'data': retval.msg
                     });
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
@@ -45,5 +47,4 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
         default:
             console.log('wrong message');
     }
-
 });
