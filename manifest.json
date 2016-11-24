@@ -22,12 +22,6 @@
     "tabs"
   ],
 
-  "content_scripts": [
-    {
-        "matches": ["<all_urls>"],
-        "css" : ["popup/css/style_wrap.css"]
-    }
-  ],
 
   "web_accessible_resources": [
     "*.png",
