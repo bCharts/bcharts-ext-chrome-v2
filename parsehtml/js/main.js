@@ -41,13 +41,12 @@ $(document).on("mouseout", "#rect",function(event) {
 $(document).on("click", "#grabber",function() {
 	// replace just a table with ID of the right one
  	 var txt = $(".tableToCSV").TableCSVExport();
- 	 alert (txt);
  	 data = {
     'redirect_uri': "http://beta.bcharts.xyz/chartdesigner" ,
     'payload': txt,
     'redirect_type': 'redirect',
   }
-  //chrome.extension.sendRequest({'message':'htmlParsed','data': data},function(response){})
+  chrome.extension.sendRequest({'message':'htmlParsed','data': data},function(response){})
 
 });
 

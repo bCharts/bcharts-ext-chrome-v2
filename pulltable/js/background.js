@@ -12,9 +12,9 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
     switch (msg.type) {
         case 'pulltable':
             $.ajax({
-                // url: 'http://choozpy.mybluemix.net/pulltablefromimage',
-                // url: 'http://127.0.0.1:8000/pulltablefromimage',
-                url: 'http://127.0.0.1:8000/pulltablegoogle',
+                url: 'http://bcdev.mybluemix.net/pulltableocrwebservice',
+                // url: 'http://127.0.0.1:8000/pulltablegoogle',
+                // url: 'http://127.0.0.1:8000/pulltableocrwebservice',
                 method: 'POST',
                 async: false,
                 data: {
@@ -26,9 +26,14 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
                 },
                 dataType: 'text',
                 success: function (data, textStatus, jqXHR) {
+                    var retval = $.parseJSON(data);
+                    chrome.tabs.create({
+                        url: retval.url
+                    });
+
                     sendResponse({
-                        'result': 'ok',
-                        'data': data
+                        'result': retval.result,
+                        'data': retval.msg
                     });
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
@@ -42,5 +47,4 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
         default:
             console.log('wrong message');
     }
-
 });

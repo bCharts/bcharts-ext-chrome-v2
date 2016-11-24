@@ -1,67 +1,73 @@
 <!DOCTYPE html>
 <html>
 <head>
-     <style>
-      body {
-          width:350px;
-          font-family: avenir-next-lt, avenir, "OpenSans", "sans-serif", arial;
-          color: #444;
-          margin: 0;
-          font-size: 12px;
-      }
-     </style>
-    <script src="js/jquery.js"></script>
-    <script src="js/popup.js"></script>
-    <script src="js/slider.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/popup.css">
+<meta charset="UTF-8">
+<title>Bee Chart</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+<link rel='stylesheet prefetch' href="css/font.css">
+<link rel="stylesheet" href="css/style_wrap.css">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/popup.js"></script>
+<style>
+  html, body {
+  font-size: 62.5%;
+  height: 500px;
+  width: 325px;
+  overflow: hidden;
+}
+</style>
 </head>
-  <body>
-  <header class="cf">
 
-<nav>
-<img src="../resourses/img/flyingbeelogo.png" style="height: 23px;">
-<span style="color:#bf4c24;font-size:20px;line-height:1px;text-shadow: 0 1px 0 #444">bCharts</span>
-    <ul>
-        <li id="login">
-            <a id="login-trigger" href="#">
-                Log in <span>&#x25BC;</span>
-            </a>
-            <div id="login-content">
-                <form>
-                    <fieldset id="inputs">
-                        <input id="username" type="email" name="Email" placeholder="Your email address" required>   
-                        <input id="password" type="password" name="Password" placeholder="Password" required>
-                    </fieldset>
-                    <fieldset id="actions">
-                        <input type="submit" id="submit" class="btn" value="Log in">
-                        <label><input type="checkbox" checked="checked"> Keep me signed in</label>
-                    </fieldset>
-                </form>
-            </div>                     
-        </li>
-        <li id="signup">
-            <a href="">Sign up FREE</a>
-        </li>
-    </ul>
-</nav>
-</header>
-
-
-<div id="slider">
-  <a href="#" class="control_next">></a>
-  <a href="#" class="control_prev"><</a>
-  <ul>
-    <li><img src="../resourses/img/img1.svg"></img></li>
-    <li><img src="../resourses/img/img2.svg"></img></li>
-    <li>SLIDE 3</li>
-    <li>SLIDE 4</li>
-  </ul>  
-</div>
-
-
-
+<body>
+  <div class="cont">
+    <div class="demo">
+    <div class="login">
+            <div class="img-top">
+              <img src="../resourses/img/bee-gif.gif" class="bee-logo" alt="Cinque Terre" width="104" height="106" align="center">
+            </div>
+            <div class="login__form">
+            <div class="login__row">
+              <form method="post" name="formtag" action="TabView.html">
+              <svg class="login__icon name svg-icon" viewBox="0 0 20 20">
+                <path d="M0,20 a10,8 0 0,1 20,0z M10,0 a4,4 0 0,1 0,8 a4,4 0 0,1 0,-8" />
+              </svg>
+              <input name="username" type="text" class="login__input name" placeholder="Username"/>
+            </div>
+        
+          <div class="login__row">
+            <svg class="login__icon pass svg-icon" viewBox="0 0 20 20">
+              <path d="M0,20 20,20 20,8 0,8z M10,13 10,16z M4,8 a6,8 0 0,1 12,0" />
+            </svg>
+            <input name="password" type="password" class="login__input pass" placeholder="Password"/>
+          </div>
+       
+          <button type="submit" class="btn btn-success outline sharp login__submit" name="submit">Sign In</button>
+          <p class="login__signup">Don't have an account? &nbsp;<a href="register.html">Sign up</a></p>
+          </form>
+          <!-- <div class="btn-group">
+          <button type="button" class="btn btn-primary btn-down">Screenshot Data</button>
+          <button type="button" class="btn btn-primary btn-down">HTML Data</button>
+        </div> -->
+        <div class="btn-group ">
+          <button id="parseButton" type="button" class="btn btn-success sharp outline border">Parse HTML</button>
+          <button id="cropAreaButton" type="button" class="btn btn-success sharp outline" >Capture data</button>
+          
+      </div>
+          
+        </div>
+           
+            
+      </div>
+   
     
-    <button id="parseButton" class="btn" style="margin:5%">Parse HTML</button>
-    <button id="cropAreaButton" class="btn" style="margin:5%">Parse area</button>
-  </body>
-</html>
+    </div>
+    
+    </div>
+    
+</body>
+
+</html> 
