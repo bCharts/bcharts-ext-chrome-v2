@@ -22,6 +22,12 @@
     "tabs"
   ],
 
+  "content_scripts": [
+    {
+        "matches": ["<all_urls>"],
+        "js": ["parsehtml/js/jquery.js","parsehtml/js/main.js","parsehtml/js/jquery.tableCSVExport.js"]
+    }
+  ],
 
   "web_accessible_resources": [
     "*.png",

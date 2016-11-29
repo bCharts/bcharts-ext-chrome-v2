@@ -1,12 +1,29 @@
 var tableID;
 var created = false;
+var htmlParsing = false;
 var data;
 var trigger = true;
 var css = chrome.extension.getURL('../../parsehtml/css/background.css');
 $(document.body).append('<link name="css_injected" href="' + css + '" rel="stylesheet">');
 
-$( 'table' ).mouseover(function(event) {
+chrome.runtime.onMessage.addListener(
+ function(request, sender) {
+ 	switch (request.message)
+ 	{
+        case 'highlightCode':
+           htmlParsing = true;
+           trigger = true;
+        break;
 
+        default:
+        	sendResponse({data: 'Invalid arguments'});
+        break;
+    }
+  });
+
+
+$(document).on("mouseover", "table",function(event) {
+	if (htmlParsing == true){
 		$(this).addClass("tableToCSV");
 		var position = $(this).closest('table').offset();
 		var width = $(this).closest('table').width();
@@ -24,6 +41,7 @@ $( 'table' ).mouseover(function(event) {
      
 
 		}
+	}
 
 	
 
