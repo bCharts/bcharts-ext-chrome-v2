@@ -12,17 +12,11 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
     switch (msg.type) {
         case 'pulltable':
             $.ajax({
-<<<<<<< HEAD
                 // url: 'http://bcdev.mybluemix.net/pulltableocrwebservice',
                 url: 'http://bcdev.mybluemix.net/pulltable',
                 // url: 'http://127.0.0.1:8000/pulltablegoogle',
                 // url: 'http://127.0.0.1:8000/pulltableocrwebservice',
                 // url: 'http://127.0.0.1:8000/pulltable',
-=======
-                url: 'http://bcdev.mybluemix.net/pulltableocrwebservice',
-                // url: 'http://127.0.0.1:8000/pulltablegoogle',
-                // url: 'http://127.0.0.1:8000/pulltableocrwebservice',
->>>>>>> ba985aa71d6c05667076341d1c148ea4c4490e37
                 method: 'POST',
                 async: false,
                 data: {
@@ -35,7 +29,6 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
                 dataType: 'text',
                 success: function (data, textStatus, jqXHR) {
                     var retval = $.parseJSON(data);
-<<<<<<< HEAD
                     console.log(retval)
                     if (retval.result == 'ok') {
                         chrome.tabs.create({
@@ -54,15 +47,6 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
                             'step5': retval.images.step5,
                             'step6': retval.images.step6
                         }
-=======
-                    chrome.tabs.create({
-                        url: retval.url
-                    });
-
-                    sendResponse({
-                        'result': retval.result,
-                        'data': retval.msg
->>>>>>> ba985aa71d6c05667076341d1c148ea4c4490e37
                     });
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
