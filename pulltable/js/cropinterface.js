@@ -347,15 +347,18 @@ var cropinterface = {
         id: '523d8477b7db1cbbf2018ddef09ee01d3624ad7ec3e5acb501fd9cfdcad9856d',
         id_1: '523d8477b7db1cbbf2018ddef09ee01d3624ad7ec3e5acb501fd9cfdcad9856d_1',
 
-        ta_width_rt: 0.7,
-        ta_height_rt: 0.7,
+        ta_width_rt: 0.5,
+        ta_height_rt: 0.5,
 
-        html: function (data, render) {
+        html: function (data) {
             var tag = '<div id="' + cropinterface.result_view.id + '" name="' + gid_cropinterface + '" class="f00ba127a295931ad49c1f9a8a3e90b6">';
             tag += '<div id="' + cropinterface.result_view.id_1 + '" class="f4ef29dd39f45346c131bdcfffba644d">';
-            if (!render) tag += '<xmp>';
-            tag += data;
-            if (!render) tag += '</xmp>';
+            tag += '<p align="center">Original Cropped Image<br><img style="width: 90%;" src="' + data.images.step1 + '"><br>';
+            tag += 'Monochromized<br><img style="width: 90%;" src="' + data.images.step2 + '"><br>';
+            tag += 'Guide Added<br><img style="width: 90%;" src="' + data.images.step3 + '"><br>';
+            tag += 'Table Recognized<br><img style="width: 90%;" src="' + data.images.step4 + '"><br>';
+            tag += 'Words Recognized<br><img style="width: 90%;" src="' + data.images.step5 + '"><br>';
+            tag += 'Two Results Merged<br><img style="width: 90%;" src="' + data.images.step6 + '"></p>';
             tag += '</div>';
 
             return tag;
