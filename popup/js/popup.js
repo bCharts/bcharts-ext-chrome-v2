@@ -8,6 +8,7 @@
  * @param {function(string)} callback - called when the URL of the current tab
  *   is found.
  */
+
 function getCurrentTabUrl(callback) {
   // Query filter to be passed to chrome.tabs.query - see
   // https://developer.chrome.com/extensions/tabs#method-query
@@ -103,28 +104,11 @@ chrome.tabs.executeScript(null, {
 
 
 $(document).on("click", "#parseButton",function() {
-     chrome.tabs.executeScript(null, {
-    file: 'parsehtml/js/jquery.js'
-}, function () {
-    if (chrome.extension.lastError) {
-        console.log(chrome.extension.lastError.message);
-    }
-});
 
-     chrome.tabs.executeScript(null, {
-    file: 'parsehtml/js/main.js'
-}, function () {
-    if (chrome.extension.lastError) {
-        console.log(chrome.extension.lastError.message);
-    }
-});
-    chrome.tabs.executeScript(null, {
-    file: 'parsehtml/js/jquery.tableCSVExport.js'
-}, function () {
-    if (chrome.extension.lastError) {
-        console.log(chrome.extension.lastError.message);
-    }
+    chrome.tabs.getSelected(null, function(tab) {
+      chrome.tabs.sendMessage(tab.id, {message: "highlightCode"});
     });
+    
       window.close();
 });
 
