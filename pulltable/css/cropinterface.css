@@ -79,7 +79,11 @@
     position: absolute;
     top: 50%;
     left: 50%;
+<<<<<<< HEAD
+    width: 30%;
+=======
     width: 40%;
+>>>>>>> ba985aa71d6c05667076341d1c148ea4c4490e37
     height: 40%;
     overflow: auto;
     border: dotted rgb(240,164,34) 5px;
