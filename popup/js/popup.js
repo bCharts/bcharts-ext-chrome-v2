@@ -55,9 +55,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 $(document).on("click", "#cropAreaButton",function() {
-  /**
- * Created by bruce on 2016-11-06.
- */
 
 chrome.tabs.executeScript(null, {
     file: 'pulltable/js/jquery.js'
