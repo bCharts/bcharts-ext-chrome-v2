@@ -28,6 +28,13 @@ cropinterface.mouse_control_layer.jqo().mousedown(function (e) {
     cropinterface.update_location(s_area_top, s_area_left, 0, 0);
 });
 
+$(window).keyup(function (e) {
+    // esc key
+    if (e.keyCode == 27) {
+        cropinterface.remove_all();
+    }
+});
+
 cropinterface.mouse_control_layer.jqo().mousemove(function (e) {
     if (mousedown) {
         var current_mousedown_x = e.offsetX + $(document.body).scrollLeft();
@@ -57,10 +64,6 @@ cropinterface.mouse_control_layer.jqo().mouseup(function (e) {
 
     mousedown = false;
     region_selected = true;
-    // var scroll_top = $(document.body).scrollTop() - first_scroll_top;
-    // var scroll_left = $(document.body).scrollLeft() - first_scroll_left;
-    // s_area_width = e.offsetX - first_mousedown_x + scroll_left;
-    // s_area_height = e.offsetY - first_mousedown_y + scroll_top;
     cropinterface.update_location(s_area_top, s_area_left, s_area_width, s_area_height);
 
     cropinterface.ok_button.jqo().fadeIn(200);
@@ -85,10 +88,6 @@ cropinterface.ok_button.jqo().click(function (e) {
 
             chrome.runtime.sendMessage({'type': 'pulltable', 'data': data}, function (response) {
                 cropinterface.remove_progress_view();
-                // $(cropinterface.result_view.html(response)).appendTo(document.body);
-                // cropinterface.result_view.resize_result_table();
-                // console.log(response.data);
-                // cropinterface.remove_all();
                 if (response.result != 'ok') {
                     alert(response.result)
                 }
@@ -103,4 +102,8 @@ cropinterface.cancel_button.jqo().click(function () {
 
 $(window).resize(function (e) {
     cropinterface.result_view.resize_result_table();
+});
+
+cropinterface.close_button.jqo().mousedown(function () {
+    cropinterface.remove_all();
 });

@@ -88,7 +88,7 @@ var cropinterface = {
 
         html: function () {
             return '<div id="' + cropinterface.mouse_control_layer.id + '" name="' + gid_cropinterface + '" ' +
-                'class="e8c75e344f54d19192193b558b94fc00"></div>';
+                'class="e8c75e344f54d19192193b558b94fc00">' + cropinterface.close_button.html() + '</div>';
         },
 
         jqid: function () {
@@ -97,6 +97,23 @@ var cropinterface = {
 
         jqo: function () {
             return $(cropinterface.mouse_control_layer.jqid());
+        }
+    },
+
+    close_button: {
+        id: 'f86fd7c474d44f1994a75e59c5c9476e2a112c2ec3dbcdabbb355801d50a86b3',
+
+        html: function () {
+            var close_icon_img = chrome.extension.getURL('pulltable/images/close.png');
+            return '<img id="' + cropinterface.close_button.id + '" class="ce099188c157a7b77d88e3449cc1911d" src="' + close_icon_img + '">';
+        },
+
+        jqid: function () {
+            return '#' + cropinterface.close_button.id;
+        },
+
+        jqo: function () {
+            return $(cropinterface.close_button.jqid());
         }
     },
 

@@ -85,3 +85,12 @@
     border: dotted rgb(240,164,34) 5px;
     background-color: white;
 }
+
+/* close button */
+.ce099188c157a7b77d88e3449cc1911d {
+    position: absolute;
+    width: 30px;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+}
