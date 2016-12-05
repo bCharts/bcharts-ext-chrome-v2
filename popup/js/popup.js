@@ -96,8 +96,9 @@ chrome.tabs.executeScript(null, {
         console.log(chrome.extension.lastError.message);
     }
 
-    window.close();
+    
 });
+window.close();
 });
 
 
@@ -108,7 +109,15 @@ $(document).on("click", "#parseButton",function() {
     chrome.tabs.getSelected(null, function(tab) {
       chrome.tabs.sendMessage(tab.id, {message: "highlightCode"});
     });
+    chrome.tabs.executeScript(null, {
+    file: 'parsehtml/js/jquery.tableCSVExport.js'
+}, function () {
+    if (chrome.extension.lastError) {
+        console.log(chrome.extension.lastError.message);
+    }
+
     
+});
       window.close();
 });
 

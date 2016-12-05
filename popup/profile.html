@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Bee Chart Tab View</title>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/justified-nav.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel='stylesheet prefetch' href="css/font.css">
+    
+	<link rel="stylesheet" href="css/register.css">
+
+<link rel='stylesheet' href="css/search.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+
+<style>
+	html, body {
+  font-size: 62.5%;
+  height: 400px;
+  width: 600px;
+  overflow: hidden;
+}
+/*input[type=text] {
+    width: 220px;
+    height:40px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    margin-left:165px;
+    margin-top:15px;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: white;
+    background-image: url('http://azmind.com/demo/css3-jquery-search-form/images/magnifier.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    /*width: 100%;*/
+}*/
+
+
+.img-circle {
+    border-radius: 60%;
+	height:70px;
+	width:70px;
+	align:center;
+	margin-left:40%;
+	margin-top:10px;
+}
+.whole_menu{
+  width:550px; 
+   height: 270px; 
+   background:#D5DBDB; float:left;  
+  
+}
+.divide_menu{
+   width:515px; 
+   height: 160px; 
+   background:white; 
+   float:left;  
+   margin-left:20px;
+   margin-top:10px;   
+}
+.active{
+text:black;}
+
+
+.scroll{
+
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  height: 370px;
+  width: 595px;
+}
+</style>
+  </head>
+ <body>
+ 
+ 	<div class="cont">
+	  <div class="demo-tab">
+	  	<div class="login">
+		<div class="scroll">
+            <div class="img-top">
+            	<img src="../resourses/img/bee-gif.gif" class="bee-logo-tab" alt="Cinque Terre" width="104" height="106" align="center">
+            </div><br><br><br><br><br><br><br><br><br>
+      <!-- The justified navigation menu is meant for single line per list item.
+           Multiple lines will require custom code not provided by Bootstrap. -->
+    <div class="container">
+    	<ul class="nav nav-tabs ">
+    <li class="active" style="margin-left:-10px; font-size:12px; "><a data-toggle="tab" href="#home" style="color:white">My charts</a></li>
+    <li style="font-size:12px"><a data-toggle="tab" href="#menu1" style="color:white">My dashboards</a></li>
+    <li style="font-size:12px"><a data-toggle="tab" href="#menu2" style="color:white">Community Charts</a></li>
+    <li style="font-size:12px"><a data-toggle="tab" href="#menu3" style="color:white">Create Charts</a></li>
+	<li style="font-size:12px"><a data-toggle="tab" href="#menu4" style="color:white">Profile</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+    	<div class="head">
+      <div class="heading">
+      <h3 class="heading">My charts</h3>
+      </div>
+      <div class="search">
+			<input type="text" class="form-control input-sm" maxlength="64" placeholder="Search" />
+			<button type="submit" class="btn btn-primary btn-sm">Search</button>
+		</div>
+		</div>
+	<div class="img_logic">
+      <img class="logo-mychart" src="images/home1.png">
+      <img class="logo-mychart" src="images/home3.png">
+      <img class="logo-mychart" src="images/home2.png">
+      <img class="logo-mychart" src="images/home4.png">
+      <img class="logo-mychart" src="images/home3.png">
+      <img class="logo-mychart" src="images/home1.png">
+      <img class="logo-mychart" src="images/home4.png">
+      <img class="logo-mychart" src="images/home2.png">
+    </div>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+      <h3 class="heading">My Dashboard</h3>
+      <div class="img_logic">
+      <img class="logo-mychart" src="images/home1.png">
+      <img class="logo-mychart" src="images/home3.png">
+      <img class="logo-mychart" src="images/home2.png">
+      <img class="logo-mychart" src="images/home4.png">
+      <img class="logo-mychart" src="images/home3.png">
+      <img class="logo-mychart" src="images/home1.png">
+      <img class="logo-mychart" src="images/home4.png">
+      <img class="logo-mychart" src="images/home2.png">
+    </div>
+   </div>
+    <div id="menu2" class="tab-pane fade in active">
+    	<div class="head">
+      <div class="heading">
+      <h3 class="heading">My charts</h3>
+      </div>
+      <div class="search">
+			<input type="text" class="form-control input-sm" maxlength="64" placeholder="Search" />
+			<button type="submit" class="btn btn-primary btn-sm">Search</button>
+		</div>
+		</div>
+	<div class="img_logic">
+      <img class="logo-mychart" src="images/home1.png">
+      <img class="logo-mychart" src="images/home3.png">
+      <img class="logo-mychart" src="images/home2.png">
+      <img class="logo-mychart" src="images/home4.png">
+      <img class="logo-mychart" src="images/home3.png">
+      <img class="logo-mychart" src="images/home1.png">
+      <img class="logo-mychart" src="images/home4.png">
+      <img class="logo-mychart" src="images/home2.png">
+    </div>
+    </div>
+    
+    <div id="menu3" class="tab-pane fade">
+      <h3 class="heading">Create a Chart</h3>
+      <div class="img_logic">
+      <button class="chart-type-button dashboard-button md-whiteframe-2dp md-button ng-scope md-ink-ripple" type="button" ng-transclude="" ng-repeat="tile in allTiles.slice(0,5)" ng-click="showNewDialog($event, tile.provider, tile.metric)" aria-label="dashDB"> <p class="chart-title ng-binding ng-scope">dashDB</p><img class="logo-provider ng-scope" src="images/db2.png">
+      	 </button>
+      	
+      	<button class="chart-type-button dashboard-button md-whiteframe-2dp md-button ng-scope md-ink-ripple" type="button" ng-transclude="" ng-repeat="tile in allTiles.slice(0,5)" ng-click="showNewDialog($event, tile.provider, tile.metric)" aria-label="SODA">
+      		 <p class="chart-title ng-binding ng-scope">SODA</p> <img class="logo-provider ng-scope" src="images/soda.png">
+      		  </button>
+      		 
+      		  <button class="chart-type-button dashboard-button md-whiteframe-2dp md-button ng-scope md-ink-ripple" type="button" ng-transclude="" ng-repeat="tile in allTiles.slice(0,5)" ng-click="showNewDialog($event, tile.provider, tile.metric)" aria-label="RaspberryPi"> 
+      		  	<p class="chart-title ng-binding ng-scope">RaspberryPi</p>
+      		  	 <img class="logo-provider ng-scope" src="images/raspberrypi.png"> </button>
+		<button class="chart-type-button dashboard-button md-whiteframe-2dp md-button ng-scope md-ink-ripple" type="button" ng-transclude="" ng-repeat="tile in allTiles.slice(0,5)" ng-click="showNewDialog($event, tile.provider, tile.metric)" aria-label="Facebook">
+			 <p class="chart-title ng-binding ng-scope">Facebook</p> 
+			<img class="logo-provider ng-scope" src="images/facebook.png"> </button>
+		<button class="chart-type-button dashboard-button md-whiteframe-2dp md-button ng-scope md-ink-ripple" type="button" ng-transclude="" ng-repeat="tile in allTiles.slice(0,5)" ng-click="showNewDialog($event, tile.provider, tile.metric)" aria-label="Fitbit"> 
+			<p class="chart-title ng-binding ng-scope">Fitbit</p> 
+			<img class="logo-provider ng-scope" src="images/fitbit.png"> </button>
+		<button class="chart-type-button dashboard-button md-whiteframe-2dp md-button ng-scope md-ink-ripple" type="button" ng-transclude="" ng-repeat="tile in allTiles.slice(5,10)" ng-click="showNewDialog($event, tile.provider, tile.metric)" aria-label="Twitter"> 
+			<p class="chart-title ng-binding ng-scope">Twitter</p> 
+			<img class="logo-provider ng-scope" src="images/twitter.png"> </button>
+		<button class="chart-type-button dashboard-button md-whiteframe-2dp md-button ng-scope md-ink-ripple" type="button" ng-transclude="" ng-repeat="tile in allTiles.slice(5,10)" ng-click="showNewDialog($event, tile.provider, tile.metric)" aria-label="Upload"> 
+			<p class="chart-title ng-binding ng-scope">Upload</p>
+			 <img class="logo-provider ng-scope" src="images/upload.png"> </button>
+		<button class="chart-type-button dashboard-button md-whiteframe-2dp md-button ng-scope md-ink-ripple" type="button" ng-transclude="" ng-repeat="tile in allTiles.slice(5,10)" ng-click="showNewDialog($event, tile.provider, tile.metric)" aria-label="WeatherCompany"> 
+<p class="chart-title ng-binding ng-scope">Weather Company</p> 
+<img class="logo-provider ng-scope" src="images/weathercompany.png"> </button>
+<button class="chart-type-button dashboard-button md-whiteframe-2dp md-button ng-scope md-ink-ripple" type="button" ng-transclude="" ng-repeat="tile in allTiles.slice(5,10)" ng-click="showNewDialog($event, tile.provider, tile.metric)" aria-label="Db2">
+	 <p class="chart-title ng-binding ng-scope">Db2</p> 
+	 <img class="logo-provider ng-scope" src="images/db2 (1).png"> </button>
+<button class="chart-type-button dashboard-button md-whiteframe-2dp md-button ng-scope md-ink-ripple" type="button" ng-transclude="" ng-repeat="tile in allTiles.slice(5,10)" ng-click="showNewDialog($event, tile.provider, tile.metric)" aria-label="Url"> 
+	<p class="chart-title ng-binding ng-scope">Url</p>
+	 <img class="logo-provider ng-scope" src="images/insertChart.png"> </button>
+</div>
+
+</div>
+      	<div id="menu4" class="tab-pane fade">
+       <h3 class="heading">Profile</h3>
+      <div class= "whole_menu" > 
+	  <img class="img-circle" src="images/gagan.jpg"">
+	    <div class= "divide_menu">
+	    <br><div style="float:left; text:bold; font-size:13px; margin-left:10px;">
+		<table><tr><th>Display Name:</th><td>lovepreet</td></tr>
+		    <tr><th>Email:</th><td>lovepreet@gmail.com</td></tr>
+			    <tr><th>Client id:</th><td>23467744501-a167-091-5645678b</td></tr>
+				    <tr><th>Secret:</th><td>790a123ab</td></tr>
+					</table>
+	  
+	  
+		</div>
+</div>		
+    </div>
+  </div>
+    	</div>
+
+    </div>
+    </div>
+    </div>
+
+
+ </body>
+ 	</html>
