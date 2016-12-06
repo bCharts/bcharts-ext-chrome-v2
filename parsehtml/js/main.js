@@ -11,8 +11,19 @@ chrome.runtime.onMessage.addListener(
  	switch (request.message)
  	{
         case 'highlightCode':
-           htmlParsing = true;
-           trigger = true;
+           if ($('table').length>0)
+           {
+           		var str = 'We found '+$('table').length+' tables on this web page';
+           		toastr.success(str, 'Success')
+           		highlight_tables();
+           		htmlParsing = true;
+          		trigger = true;
+           }
+           else
+           {
+           		toastr.error('We found no tables on this web page', 'Ooops!')
+           }
+           
         break;
 
         default:
@@ -21,19 +32,47 @@ chrome.runtime.onMessage.addListener(
     }
   });
 
+$(window).keyup(function (e) {
+    // esc key
+    if (e.keyCode == 27) {
+        $(".hlrect").remove();
+        $("#btn").remove();
+        $(".tableToCSV").removeClass("tableToCSV");
+        created = false;
+        trigger = false;
+    }
+});
 
-$(document).on("mouseover", "table",function(event) {
+function highlight_tables(){
+	$('table').each(function() {
+  		var position = $(this).offset();
+		var width = $(this).width();
+		var height = $(this).height();
+		var tag = '<div class="hlrect" name="rectname" style="position: absolute; padding: 0px; margin: 0px; border-style: dotted; border-width: 2px; border-color: #2980b9; background-color: #3498db; opacity: 0.3; top: ' + position.top + 'px; left: ' + position.left + 'px; width: ' + width + 'px; height: ' + height + 'px; z-index: "1147483646"></div>';
+		$(tag).appendTo(document.body);
+	});
+
+
+	
+	
+
+}
+
+$(document).on("mouseover", ".hlrect",function(event) {
 	if (htmlParsing == true){
-		$(this).addClass("tableToCSV");
-		var position = $(this).closest('table').offset();
-		var width = $(this).closest('table').width();
-		var height = $(this).closest('table').height();
+    var rect = $(this);
+		$( 'table' )
+    .filter(function() {
+     return ($(this).offset().top == rect.offset().top && $(this).offset().top == rect.offset().top && $(this).width() == rect.width() && $(this).height == rect.height) ;
+    })
+    .addClass("tableToCSV");
+		var position = $(this).offset();
+		var width = $(this).width();
+		var height = $(this).height();
 		tableID =  $(this).attr("id");
-	    var tag = '<div id="rect" name="rectname" style="position: absolute; padding: 0px; margin: 0px; border-style: dotted; border-width: 2px; border-color: #2980b9; background-color: #3498db; opacity: 0.3; top: ' + position.top + 'px; left: ' + position.left + 'px; width: ' + width + 'px; height: ' + height + 'px; z-index: "1147483646"></div>';
-		var btnblock = '<div id="btn" style="position: absolute; padding: 0px; margin: 0px; top: ' + (position.top+10) + 'px; left: ' + (position.left+10) + 'px; z-index: "2147483646"><a href="#" id="grabber"><img id="beelogo" style="display: block; width: 95%; height:auto; padding: 5%;"></img></a></div>'
+	    var btnblock = '<div id="btn" style="position: absolute; padding: 0px; margin: 0px; top: ' + (position.top+10) + 'px; left: ' + (position.left+10) + 'px; z-index: "2147483646"><a href="#" id="grabber"><img id="beelogo" style="display: block; width: 95%; height:auto; padding: 5%;"></img></a></div>';
 		
 		if (!created && trigger) {
-			$(tag).appendTo(document.body);
 			$(btnblock).appendTo(document.body);
 			created = true;
 			$('#beelogo').attr('src', chrome.extension.getURL('resourses/img/beelogo-old.png'));
@@ -47,10 +86,9 @@ $(document).on("mouseover", "table",function(event) {
 
 });
 
-$(document).on("mouseout", "#rect",function(event) {
+$(document).on("mouseout", ".hlrect",function(event) {
 	if (created==true){
- 	 	if ((event.pageX<$("#rect").position().left) ||  (event.pageX>$("#rect").position().left+$("#rect").width()) || (event.pageY<$("#rect").position().top) || (event.pageY>$("#rect").position().top+$("#rect").height())){
- 	 		$(this).remove();
+ 	 	if ((event.pageX<$(this).position().left) ||  (event.pageX>$(this).position().left+$(this).width()) || (event.pageY<$(this).position().top) || (event.pageY>$(this).position().top+$(this).height())){
  	 		$("#btn").remove();
  	 		$(".tableToCSV").removeClass("tableToCSV");
  		 	created = false;
@@ -70,7 +108,7 @@ $(document).on("click", "#grabber",function() {
   }
   chrome.extension.sendRequest({'message':'htmlParsed','data': data},function(response){})
 
-  $("#rect").remove();
+  $(".hlrect").remove();
   $("#btn").remove();
   $(".tableToCSV").removeClass("tableToCSV");
   created = false;

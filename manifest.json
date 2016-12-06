@@ -22,10 +22,14 @@
       "matches": [
         "<all_urls>"
       ],
+      "css": [
+        "parsehtml/css/toastr.scss"
+    ],
       "js": [
         "parsehtml/js/jquery.js",
         "parsehtml/js/main.js",
-        "parsehtml/js/jquery.tableCSVExport.js"
+        "parsehtml/js/jquery.tableCSVExport.js",
+        "parsehtml/js/toastr.js"
       ]
     }
   ],

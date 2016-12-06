@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
@@ -22,37 +23,107 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <link rel='stylesheet prefetch' href="css/font.css">
-	<link rel="stylesheet" href="css/style_wrap.css">
-
+  <link rel="stylesheet" href="css/style_wrap.css">
+  
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <script src="js/jquery.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/bootstrap.js"></script>
+  
   </head>
 <style>
-	html, body {
+  html, body {
   font-size: 62.5%;
   height: 400px;
-  width: 600px;
-  overflow: hidden;
+  width: 640px;
+ 
+  
+  
+
 }
+.scroll{
+
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  height: 370px;
+  width: 595px;
+}
+
+
+  
+.take-all-space-you-can{
+   width:140px;
+   font-size:10px;
+   
+}
+.nav nav-tabs{
+   background-color : #161616;
+}
+
+
+
+.ui-tabs .ui-nav-tabs li.ui-tabs-active a {
+   color: #0000ff ;
+}
+
+.whole_menu{
+  width:550px; 
+   height: 270px; 
+   background:#D5DBDB; float:left;  
+  
+}
+.divide_menu{
+   width:515px; 
+   height: 160px; 
+   background:white; 
+   float:left;  
+   margin-left:20px;
+   margin-top:10px;   
+}
+
+li.ui-tabmenuitem.ui-state-default.ui-state-active {
+  background: #A8C8EE ;
+}
+
+.img-circle {
+    border-radius: 60%;
+  height:70px;
+  width:70px;
+  align:center;
+  margin-left:40%;
+  margin-top:10px;
+}
+
+.active{
+ 
+      
+}
+
 </style>
   <body>
-  	<div class="cont">
-	  <div class="demo-tab">
-	  	<div class="login">
-            <div class="img-top">
-            	<img src="../resourses/img/bee-gif.gif" class="bee-logo-tab" alt="Cinque Terre" width="104" height="106" align="center">
-            </div>
+  
+    <div class="cont">
+  
+    <div class="demo-tab">
+     
+      <div class="login">
+    <div class="scroll">
+            <div class="img-top" >
+              <img src="../resourses/img/bee-gif.gif"  class="bee-logo-tab" alt="Cinque Terre"  width="104" height="106" align="center">
+            </div><br><br><br><br><br><br><br><br>
+      
  
       <!-- The justified navigation menu is meant for single line per list item.
            Multiple lines will require custom code not provided by Bootstrap. -->
-    <div class="container">
-    	<ul class="nav nav-update nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#home">My charts</a></li>
-    <li><a data-toggle="tab" href="#menu1">My dashboards</a></li>
-    <li><a data-toggle="tab" href="#menu2">Community Charts</a></li>
-    <li><a data-toggle="tab" href="#menu3">Create Charts</a></li>
+      
+    <div class="container" >
+  
+    <ul class="nav nav-tabs " >
+    <li class="active" style="margin-left:-10px; font-size:12px; "><a data-toggle="tab" href="#home" style="color:white" >My charts</a></li>
+    <li  style="font-size:12px"><a data-toggle="tab" href="#menu1" style="color:white">My dashboards</a></li>
+    <li style="font-size:12px"><a data-toggle="tab" href="#menu2" style="color:white">Community Charts</a></li>
+    <li style="font-size:12px"><a data-toggle="tab" href="#menu3" style="color:white">Create Charts</a></li>
+  <li style="font-size:12px"><a data-toggle="tab" href="#menu4" style="color:white">Profile</a></li>
   </ul>
 
   <div class="tab-content">
@@ -66,18 +137,20 @@
       <img class="logo-mychart" src="../resourses/img/home1.png">
       <img class="logo-mychart" src="../resourses/img/home4.png">
       <img class="logo-mychart" src="../resourses/img/home2.png">
+    <img class="logo-mychart" src="../resourses/img/home3.png">
+    <img class="logo-mychart" src="../resourses/img/home1.png">
     </div>
     <div id="menu1" class="tab-pane fade">
       <h3 class="heading">My Dashboard</h3>
       <button class="chart-type-button-dashboard dashboard-button md-whiteframe-2dp md-button ng-scope md-ink-ripple" type="button" ng-transclude="" ng-repeat="tile in allTiles.slice(0,5)" ng-click="showNewDialog($event, tile.provider, tile.metric)" aria-label="RaspberryPi"> 
-      		  	<p class="chart-title ng-binding ng-scope">Twitter Dashboard</p>
-      		  	 <img class="logo-provider ng-scope" src="images/twitter.png"> </button>
-		<button class="chart-type-button-dashboard dashboard-button md-whiteframe-2dp md-button ng-scope md-ink-ripple" type="button" ng-transclude="" ng-repeat="tile in allTiles.slice(0,5)" ng-click="showNewDialog($event, tile.provider, tile.metric)" aria-label="Facebook">
-			 <p class="chart-title ng-binding ng-scope">Fitbit Dashboard</p> 
-			<img class="logo-provider ng-scope" src="images/fitbit.png"> </button>
-		<button class="chart-type-button-dashboard dashboard-button md-whiteframe-2dp md-button ng-scope md-ink-ripple" type="button" ng-transclude="" ng-repeat="tile in allTiles.slice(0,5)" ng-click="showNewDialog($event, tile.provider, tile.metric)" aria-label="Fitbit"> 
-			<p class="chart-title ng-binding ng-scope">DashDB Dashboard</p> 
-			<img class="logo-provider ng-scope" src="images/db2.png"> </button>
+              <p class="chart-title ng-binding ng-scope">Twitter Dashboard</p>
+               <img class="logo-provider ng-scope" src="images/twitter.png"> </button>
+    <button class="chart-type-button-dashboard dashboard-button md-whiteframe-2dp md-button ng-scope md-ink-ripple" type="button" ng-transclude="" ng-repeat="tile in allTiles.slice(0,5)" ng-click="showNewDialog($event, tile.provider, tile.metric)" aria-label="Facebook">
+       <p class="chart-title ng-binding ng-scope">Fitbit Dashboard</p> 
+      <img class="logo-provider ng-scope" src="images/fitbit.png"> </button>
+    <button class="chart-type-button-dashboard dashboard-button md-whiteframe-2dp md-button ng-scope md-ink-ripple" type="button" ng-transclude="" ng-repeat="tile in allTiles.slice(0,5)" ng-click="showNewDialog($event, tile.provider, tile.metric)" aria-label="Fitbit"> 
+      <p class="chart-title ng-binding ng-scope">DashDB Dashboard</p> 
+      <img class="logo-provider ng-scope" src="images/db2.png"> </button>
     </div>
     <div id="menu2" class="tab-pane fade">
        <h3 class="heading">Community charts</h3>
@@ -89,53 +162,68 @@
       <img class="logo-mychart" src="../resourses/img/home1.png">
       <img class="logo-mychart" src="../resourses/img/home4.png">
       <img class="logo-mychart" src="../resourses/img/home2.png">
+     <img class="logo-mychart" src="../resourses/img/home4.png">
+      <img class="logo-mychart" src="../resourses/img/home3.png">
     </div>
     
     
     <div id="menu3" class="tab-pane fade">
       <h3 class="heading">Create a Chart</h3>
       <button class="chart-type-button dashboard-button md-whiteframe-2dp md-button ng-scope md-ink-ripple" type="button" ng-transclude="" ng-repeat="tile in allTiles.slice(0,5)" ng-click="showNewDialog($event, tile.provider, tile.metric)" aria-label="dashDB"> <p class="chart-title ng-binding ng-scope">dashDB</p><img class="logo-provider ng-scope" src="../resourses/img/db2.png">
-      	 </button>
-      	
-      	<button class="chart-type-button dashboard-button md-whiteframe-2dp md-button ng-scope md-ink-ripple" type="button" ng-transclude="" ng-repeat="tile in allTiles.slice(0,5)" ng-click="showNewDialog($event, tile.provider, tile.metric)" aria-label="SODA">
-      		 <p class="chart-title ng-binding ng-scope">SODA</p> <img class="logo-provider ng-scope" src="../resourses/img/soda.png">
-      		  </button>
-      		 
-      		  <button class="chart-type-button dashboard-button md-whiteframe-2dp md-button ng-scope md-ink-ripple" type="button" ng-transclude="" ng-repeat="tile in allTiles.slice(0,5)" ng-click="showNewDialog($event, tile.provider, tile.metric)" aria-label="RaspberryPi"> 
-      		  	<p class="chart-title ng-binding ng-scope">RaspberryPi</p>
-      		  	 <img class="logo-provider ng-scope" src="../resourses/img/raspberrypi.png"> </button>
-		<button class="chart-type-button dashboard-button md-whiteframe-2dp md-button ng-scope md-ink-ripple" type="button" ng-transclude="" ng-repeat="tile in allTiles.slice(0,5)" ng-click="showNewDialog($event, tile.provider, tile.metric)" aria-label="Facebook">
-			 <p class="chart-title ng-binding ng-scope">Facebook</p> 
-			<img class="logo-provider ng-scope" src="../resourses/img/facebook.png"> </button>
-		<button class="chart-type-button dashboard-button md-whiteframe-2dp md-button ng-scope md-ink-ripple" type="button" ng-transclude="" ng-repeat="tile in allTiles.slice(0,5)" ng-click="showNewDialog($event, tile.provider, tile.metric)" aria-label="Fitbit"> 
-			<p class="chart-title ng-binding ng-scope">Fitbit</p> 
-			<img class="logo-provider ng-scope" src="../resourses/img/fitbit.png"> </button>
-		<button class="chart-type-button dashboard-button md-whiteframe-2dp md-button ng-scope md-ink-ripple" type="button" ng-transclude="" ng-repeat="tile in allTiles.slice(5,10)" ng-click="showNewDialog($event, tile.provider, tile.metric)" aria-label="Twitter"> 
-			<p class="chart-title ng-binding ng-scope">Twitter</p> 
-			<img class="logo-provider ng-scope" src="../resourses/img/twitter.png"> </button>
-		<button class="chart-type-button dashboard-button md-whiteframe-2dp md-button ng-scope md-ink-ripple" type="button" ng-transclude="" ng-repeat="tile in allTiles.slice(5,10)" ng-click="showNewDialog($event, tile.provider, tile.metric)" aria-label="Upload"> 
-			<p class="chart-title ng-binding ng-scope">Upload</p>
-			 <img class="logo-provider ng-scope" src="../resourses/img/upload.png"> </button>
-		<button class="chart-type-button dashboard-button md-whiteframe-2dp md-button ng-scope md-ink-ripple" type="button" ng-transclude="" ng-repeat="tile in allTiles.slice(5,10)" ng-click="showNewDialog($event, tile.provider, tile.metric)" aria-label="WeatherCompany"> 
+         </button>
+        
+        <button class="chart-type-button dashboard-button md-whiteframe-2dp md-button ng-scope md-ink-ripple" type="button" ng-transclude="" ng-repeat="tile in allTiles.slice(0,5)" ng-click="showNewDialog($event, tile.provider, tile.metric)" aria-label="SODA">
+           <p class="chart-title ng-binding ng-scope">SODA</p> <img class="logo-provider ng-scope" src="../resourses/img/soda.png">
+            </button>
+           
+            <button class="chart-type-button dashboard-button md-whiteframe-2dp md-button ng-scope md-ink-ripple" type="button" ng-transclude="" ng-repeat="tile in allTiles.slice(0,5)" ng-click="showNewDialog($event, tile.provider, tile.metric)" aria-label="RaspberryPi"> 
+              <p class="chart-title ng-binding ng-scope">RaspberryPi</p>
+               <img class="logo-provider ng-scope" src="../resourses/img/raspberrypi.png"> </button>
+    <button class="chart-type-button dashboard-button md-whiteframe-2dp md-button ng-scope md-ink-ripple" type="button" ng-transclude="" ng-repeat="tile in allTiles.slice(0,5)" ng-click="showNewDialog($event, tile.provider, tile.metric)" aria-label="Facebook">
+       <p class="chart-title ng-binding ng-scope">Facebook</p> 
+      <img class="logo-provider ng-scope" src="../resourses/img/facebook.png"> </button>
+    <button class="chart-type-button dashboard-button md-whiteframe-2dp md-button ng-scope md-ink-ripple" type="button" ng-transclude="" ng-repeat="tile in allTiles.slice(0,5)" ng-click="showNewDialog($event, tile.provider, tile.metric)" aria-label="Fitbit"> 
+      <p class="chart-title ng-binding ng-scope">Fitbit</p> 
+      <img class="logo-provider ng-scope" src="../resourses/img/fitbit.png"> </button>
+    <button class="chart-type-button dashboard-button md-whiteframe-2dp md-button ng-scope md-ink-ripple" type="button" ng-transclude="" ng-repeat="tile in allTiles.slice(5,10)" ng-click="showNewDialog($event, tile.provider, tile.metric)" aria-label="Twitter"> 
+      <p class="chart-title ng-binding ng-scope">Twitter</p> 
+      <img class="logo-provider ng-scope" src="../resourses/img/twitter.png"> </button>
+    <button class="chart-type-button dashboard-button md-whiteframe-2dp md-button ng-scope md-ink-ripple" type="button" ng-transclude="" ng-repeat="tile in allTiles.slice(5,10)" ng-click="showNewDialog($event, tile.provider, tile.metric)" aria-label="Upload"> 
+      <p class="chart-title ng-binding ng-scope">Upload</p>
+       <img class="logo-provider ng-scope" src="../resourses/img/upload.png"> </button>
+    <button class="chart-type-button dashboard-button md-whiteframe-2dp md-button ng-scope md-ink-ripple" type="button" ng-transclude="" ng-repeat="tile in allTiles.slice(5,10)" ng-click="showNewDialog($event, tile.provider, tile.metric)" aria-label="WeatherCompany"> 
 <p class="chart-title ng-binding ng-scope">Weather Company</p> 
 <img class="logo-provider ng-scope" src="../resourses/img/weathercompany.png"> </button>
 <button class="chart-type-button dashboard-button md-whiteframe-2dp md-button ng-scope md-ink-ripple" type="button" ng-transclude="" ng-repeat="tile in allTiles.slice(5,10)" ng-click="showNewDialog($event, tile.provider, tile.metric)" aria-label="Db2">
-	 <p class="chart-title ng-binding ng-scope">Db2</p> 
-	 <img class="logo-provider ng-scope" src="../resourses/img/db2 (1).png"> </button>
+   <p class="chart-title ng-binding ng-scope">Db2</p> 
+   <img class="logo-provider ng-scope" src="../resourses/img/db2 (1).png"> </button>
 <button class="chart-type-button dashboard-button md-whiteframe-2dp md-button ng-scope md-ink-ripple" type="button" ng-transclude="" ng-repeat="tile in allTiles.slice(5,10)" ng-click="showNewDialog($event, tile.provider, tile.metric)" aria-label="Url"> 
-	<p class="chart-title ng-binding ng-scope">Url</p>
-	 <img class="logo-provider ng-scope" src="../resourses/img/insertChart.png"> </button>
-
-
-
-      		  
+  <p class="chart-title ng-binding ng-scope">Url</p>
+   <img class="logo-provider ng-scope" src="../resourses/img/insertChart.png"> </button>
+    </div>
+  
+  
+  <div id="menu4" class="tab-pane fade">
+       <h3 class="heading">Profile</h3>
+      <div class= "whole_menu" > 
+    <img class="img-circle" src="../resourses/img/home1.png">
+      <div class= "divide_menu">
+      <br><div style="float:left; text:bold; font-size:13px; margin-left:10px;">
+    <table><tr><th>Display Name:</th><td>lovepreet</td></tr>
+        <tr><th>Email:</th><td>lovepreet@gmail.com</td></tr>
+          <tr><th>Client id:</th><td>23467744501-a167-091-5645678b</td></tr>
+            <tr><th>Secret:</th><td>790a123ab</td></tr>
+          </table>
+      </div></div>
+    </div>
     </div>
   </div>
-    	</div>
+      </div>
 
     </div>
     </div>
-    </div>
+  </div>
+  </div>
   </body>
 </html>
 
