@@ -21,8 +21,8 @@ cropinterface.mouse_control_layer.jqo().mousedown(function (e) {
 
     mousedown = true;
     cropinterface.show_crop_helper();
-    first_mousedown_x = e.offsetX + $(document.body).scrollLeft();
-    first_mousedown_y = e.offsetY + $(document.body).scrollTop();
+    first_mousedown_x = e.offsetX + $(window).scrollLeft();
+    first_mousedown_y = e.offsetY + $(window).scrollTop();
     s_area_top = first_mousedown_y;
     s_area_left = first_mousedown_x;
     cropinterface.update_location(s_area_top, s_area_left, 0, 0);
@@ -37,8 +37,8 @@ $(window).keyup(function (e) {
 
 cropinterface.mouse_control_layer.jqo().mousemove(function (e) {
     if (mousedown) {
-        var current_mousedown_x = e.offsetX + $(document.body).scrollLeft();
-        var current_mousedown_y = e.offsetY + $(document.body).scrollTop();
+        var current_mousedown_x = e.offsetX + $(window).scrollLeft();
+        var current_mousedown_y = e.offsetY + $(window).scrollTop();
 
         if (first_mousedown_x > current_mousedown_x) {
             s_area_left = current_mousedown_x;
