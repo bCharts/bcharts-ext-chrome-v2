@@ -60,7 +60,12 @@ function highlight_tables(){
 
 $(document).on("mouseover", ".hlrect",function(event) {
 	if (htmlParsing == true){
-		$(this).addClass("tableToCSV");
+    var rect = $(this);
+		$( 'table' )
+    .filter(function() {
+     return ($(this).offset().top == rect.offset().top && $(this).offset().top == rect.offset().top && $(this).width() == rect.width() && $(this).height == rect.height) ;
+    })
+    .addClass("tableToCSV");
 		var position = $(this).offset();
 		var width = $(this).width();
 		var height = $(this).height();
