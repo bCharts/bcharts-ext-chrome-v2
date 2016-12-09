@@ -10,24 +10,18 @@
     <link rel="icon" href="../../favicon.ico">
 
     <title>Bee Chart Tab View</title>
-    <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="css/justified-nav.css" rel="stylesheet">
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <link href="css/justified-nav.css" rel="stylesheet">
     <link rel='stylesheet prefetch' href="css/font.css">
     
 	<link rel="stylesheet" href="css/register.css">
 
 <link rel='stylesheet' href="css/search.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
-  <script src="js/jquery.js"></script>
+  <script src="js/jquery-3.1.1.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/bootstrap.js"></script>
 
@@ -60,60 +54,23 @@ input[type=text]:focus {
     /*width: 100%;*/
 }*/
 
-
-.img-circle {
-    border-radius: 60%;
-	height:70px;
-	width:70px;
-	align:center;
-	margin-left:40%;
-	margin-top:10px;
-}
-.whole_menu{
-  width:550px; 
-   height: 270px; 
-   background:#D5DBDB; float:left;  
-  
-}
-.divide_menu{
-   width:515px; 
-   height: 160px; 
-   background:white; 
-   float:left;  
-   margin-left:20px;
-   margin-top:10px;   
-}
-.active{
-text:black;}
-
-
-.scroll{
-
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
-  height: 370px;
-  width: 595px;
-}
 </style>
   </head>
  <body>
- 
  	<div class="cont">
 	  <div class="demo-tab">
 	  	<div class="login">
-		<div class="scroll">
             <div class="img-top">
-            	<img src="../resourses/img/bee-gif.gif" class="bee-logo-tab" alt="Cinque Terre" width="104" height="106" align="center">
-            </div><br><br><br><br><br><br><br><br><br>
+            	<img src="bee-gif.gif" class="bee-logo-tab" alt="Cinque Terre" width="104" height="106" align="center">
+            </div>
       <!-- The justified navigation menu is meant for single line per list item.
            Multiple lines will require custom code not provided by Bootstrap. -->
     <div class="container">
-    	<ul class="nav nav-tabs ">
-    <li class="active" style="margin-left:-10px; font-size:12px; "><a data-toggle="tab" href="#home" style="color:white">My charts</a></li>
-    <li style="font-size:12px"><a data-toggle="tab" href="#menu1" style="color:white">My dashboards</a></li>
-    <li style="font-size:12px"><a data-toggle="tab" href="#menu2" style="color:white">Community Charts</a></li>
-    <li style="font-size:12px"><a data-toggle="tab" href="#menu3" style="color:white">Create Charts</a></li>
-	<li style="font-size:12px"><a data-toggle="tab" href="#menu4" style="color:white">Profile</a></li>
+    	<ul class="nav nav-update nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home">My charts</a></li>
+    <li><a data-toggle="tab" href="#menu1">My dashboards</a></li>
+    <li><a data-toggle="tab" href="#menu2">Community Charts</a></li>
+    <li><a data-toggle="tab" href="#menu3">Create Charts</a></li>
   </ul>
 
   <div class="tab-content">
@@ -207,24 +164,10 @@ text:black;}
 <button class="chart-type-button dashboard-button md-whiteframe-2dp md-button ng-scope md-ink-ripple" type="button" ng-transclude="" ng-repeat="tile in allTiles.slice(5,10)" ng-click="showNewDialog($event, tile.provider, tile.metric)" aria-label="Url"> 
 	<p class="chart-title ng-binding ng-scope">Url</p>
 	 <img class="logo-provider ng-scope" src="images/insertChart.png"> </button>
-</div>
+
 
 </div>
-      	<div id="menu4" class="tab-pane fade">
-       <h3 class="heading">Profile</h3>
-      <div class= "whole_menu" > 
-	  <img class="img-circle" src="images/gagan.jpg"">
-	    <div class= "divide_menu">
-	    <br><div style="float:left; text:bold; font-size:13px; margin-left:10px;">
-		<table><tr><th>Display Name:</th><td>lovepreet</td></tr>
-		    <tr><th>Email:</th><td>lovepreet@gmail.com</td></tr>
-			    <tr><th>Client id:</th><td>23467744501-a167-091-5645678b</td></tr>
-				    <tr><th>Secret:</th><td>790a123ab</td></tr>
-					</table>
-	  
-	  
-		</div>
-</div>		
+      		  
     </div>
   </div>
     	</div>
@@ -234,5 +177,7 @@ text:black;}
     </div>
 
 
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
  </body>
  	</html>
