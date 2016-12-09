@@ -3,6 +3,26 @@
   margin: 0;
   padding: 0;
 }
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+     -khtml-user-select: none; /* Konqueror */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  not supported by any browser */
+}
+.tab-content {
+	
+}
+.img_logic {
+	clear:both;
+	
+}
+.logic {
+	overflow: scroll;
+    height: 205px;
+}
 
 @media (max-width: 768px) {
   html, body {
@@ -13,20 +33,13 @@
 	border: 2px dotted #000;
 	margin-top: 20px;
 }
-svg {
+.user_icon {
   display: inline-block;
   width: 2rem;
   height: 2rem;
   overflow: visible;
 }
-.svg-icon {
-  cursor: pointer;
-}
-.svg-icon path {
-  stroke: rgba(255, 255, 255, 0.9);
-  fill: none;
-  stroke-width: 1;
-}
+
 input, button {
   outline: none;
   border: none;
@@ -38,7 +51,7 @@ input, button {
   height: 100%;
   width: 100%;
 	/*need to change here*/
-  background-image: url('../images/pink.jpg');
+  /*background-image: url('../images/pink.jpg');*/
   background-size: cover;
   overflow: hidden;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
@@ -58,23 +71,61 @@ input, button {
   /*top: 50%;*/
   left: 30%;
   margin-left: -15rem;
-  margin-top: 5px;
+  margin-top: 1.5rem;
   width: 550px;
   height: 530px;
   overflow: hidden;
 }
 .img-top {
-	/*width:100%;*/
 	width:100%;
+	display: inline;
+	float:left;
 }
 .bee-logo {
-	padding:8px;
-	margin-left:95px;
-	display:block;
+	padding:2px;
+	margin-left:15px;
+	display:inline;
 	height:auto;
-	
+	width:60px;
+	float:left;	
+	margin-top:15px;
 }
-.bee-logo-tab
+
+.circular {
+	width: 50px;
+	height: 50px;
+	border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+	margin-left:310px;
+	margin-top:15px;
+	box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	/*background: url("http://link-to-your/image.jpg") no-repeat;*/
+	}
+
+.circular img {
+	opacity: 0;
+	filter: alpha(opacity=0);
+	}
+.logo-top {
+	font-size:30px;
+	color:#000000;
+	font-family:"Maiandra GD";
+	font-weight: bold;
+	padding-top:10px;
+	margin-left:10px;
+	margin-top:5px;
+	float:left;
+}
+.blogo {
+	font-size:35px;
+}
+
+
+
+/*.bee-logo-tab
 {
 	padding:1px;
 	margin-left:15px;
@@ -83,22 +134,22 @@ input, button {
 	margin-top:7px;
 	height:auto;
 	
-}
+}*/
 .nav.nav-update {
-	margin-top:50px;
+	margin-top:5px;
 	padding-left:20px;
 	margin-bottom:0;
 }
 .nav.nav-update>li>a {
-	color:#fff;
+	color:#000;
 	font-size:12px;
 }
 .login {
   position: relative;
-  height: 100%;
-  background: -webkit-linear-gradient(top, rgba(146, 135, 187, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
-  background: linear-gradient(to bottom, rgba(146, 135, 187, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
-  -webkit-transition: opacity 0.1s, -webkit-transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25);
+  height: 110%;
+  /*background: -webkit-linear-gradient(top, rgba(146, 135, 187, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
+  background: linear-gradient(to bottom, rgba(146, 135, 187, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);*/
+   -webkit-transition: opacity 0.1s, -webkit-transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25);
   transition: opacity 0.1s, -webkit-transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25);
   transition: opacity 0.1s, transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25);
   transition: opacity 0.1s, transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25), -webkit-transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25);
@@ -137,14 +188,14 @@ input, button {
   top: 20%;
   left: 0;
   width: 100%;
-  height: 50%;
+  height: auto;
   padding: 1.5rem 2.5rem;
   text-align: center;
 }
 .login__row {
   height: 5rem;
   padding-top: 1rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid #000000;
 }
 .login__icon {
   margin-bottom: -0.4rem;
@@ -169,7 +220,7 @@ input, button {
   padding-left: 1.5rem;
   font-size: 1.5rem;
   background: transparent;
-  color: #FDFCFD;
+  color: #000000;
 }
 .login__submit {
   position: relative;
@@ -249,11 +300,13 @@ input, button {
           animation: none;
 }
 .login__signup {
-  font-size: 1.2rem;
-  color: #ABA8AE;
+	  font-size:13px;
+	  margin-top:-5px;
+	  margin-left: -50px;
+	  margin-bottom: -10px;
 }
 .login__signup a {
-  color: #fff;
+  font-size:13px;
   cursor: pointer;
 }
 .chart-type-button {
@@ -282,8 +335,8 @@ input, button {
 .logo-mychart {
 	border-radius: 4px;
     border: 1px solid #fff;
-    width: 110px;
-    height: 110px;
+    width: 90px;
+    height: 90px;
     float: left;
     margin: 5px;
     margin-left:10px;
@@ -346,15 +399,62 @@ p {
 .heading {
 	color:#fff;
 	float:left;
-	font-size:19px;
-	width:auto;
-	margin-left:5px;
 }
 .search {
 	float:left;
 }
 .img_logic {
 	clear:both;
+}
+
+.share-buttons img {
+width: 50px;
+padding: 0px;
+margin-right:18px;
+margin-left:30px;
+margin-bottom:0px;
+margin-top:5px;
+display: inline;
+text-decoration: none;
+-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;
+color: inherit;
+
+}
+
+.or-line {
+    height: 1px;
+    background-color: #e3e3e3;
+    width: 100%;
+    margin-top: 75px;
+    text-decoration: none;
+}
+.or-txt {
+    width: 22px;
+    margin: -16px auto;
+    z-index: 6;
+    padding: 10px;
+    background-color: white;
+    text-decoration: none;
+}
+.login__forget {
+	font-size:13px;
+	margin-top:15px;
+	margin-left: -140px;
+	margin-bottom: -10px;
+}
+
+.md-button {
+    letter-spacing: 0.010em;
+}
+.heading {
+	color:#000;
+	float:left;
+	font-size:19px;
+	width:auto;
+	margin-left:5px;
+}
+.search {
+	float:left;
 }
 
 #search {
@@ -369,7 +469,7 @@ p {
     height: 30px;
     position: relative;
     left: 10px;
-    margin-left:220px;
+    margin-left:241px;
     margin-top:0px;
     
     line-height: 22px;
