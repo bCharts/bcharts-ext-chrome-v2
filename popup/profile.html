@@ -10,16 +10,20 @@
     <link rel="icon" href="../../favicon.ico">
 
     <title>Bee Chart Tab View</title>
+    <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
+    <!-- Custom styles for this template -->
     <link href="css/justified-nav.css" rel="stylesheet">
+
     <link rel='stylesheet prefetch' href="css/font.css">
     
 	<link rel="stylesheet" href="css/register.css">
 
-<link rel='stylesheet' href="css/search.css">
+	<link rel='stylesheet' href="css/search.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <script src="js/jquery-3.1.1.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
@@ -60,17 +64,22 @@ input[type=text]:focus {
  	<div class="cont">
 	  <div class="demo-tab">
 	  	<div class="login">
-            <div class="img-top">
-            	<img src="bee-gif.gif" class="bee-logo-tab" alt="Cinque Terre" width="104" height="106" align="center">
-            </div>
+       <div class="img-top">
+       <img src="images/flybeefly.gif" class="bee-logo" alt="Cinque Terre" width="104" height="106" align="center">
+       <p class="logo-top"><a class="blogo" style="color:#F7A80A; text-decoration:none;">b</a><a class="chartlogo" style="color:#000000; text-decoration:none;">Charts</a></p>
+  	   <a data-toggle="tab" href="#profile"><img src="images/photo.jpg" alt="fk" class="circular"/></a>
+  		</div>
       <!-- The justified navigation menu is meant for single line per list item.
            Multiple lines will require custom code not provided by Bootstrap. -->
+   <div class="or-line"></div>
+  
     <div class="container">
     	<ul class="nav nav-update nav-tabs">
     <li class="active"><a data-toggle="tab" href="#home">My charts</a></li>
-    <li><a data-toggle="tab" href="#menu1">My dashboards</a></li>
+    <li><a data-toggle="tab" href="#menu1">dashboard</a></li>
     <li><a data-toggle="tab" href="#menu2">Community Charts</a></li>
     <li><a data-toggle="tab" href="#menu3">Create Charts</a></li>
+    <li><a data-toggle="tab" href="#profile">profile</a></li>
   </ul>
 
   <div class="tab-content">
@@ -84,7 +93,7 @@ input[type=text]:focus {
 			<button type="submit" class="btn btn-primary btn-sm">Search</button>
 		</div>
 		</div>
-	<div class="img_logic">
+	<div class="img_logic logic">
       <img class="logo-mychart" src="images/home1.png">
       <img class="logo-mychart" src="images/home3.png">
       <img class="logo-mychart" src="images/home2.png">
@@ -93,11 +102,16 @@ input[type=text]:focus {
       <img class="logo-mychart" src="images/home1.png">
       <img class="logo-mychart" src="images/home4.png">
       <img class="logo-mychart" src="images/home2.png">
+      
+      <img class="logo-mychart" src="images/home3.png">
+      <img class="logo-mychart" src="images/home1.png">
+      <img class="logo-mychart" src="images/home4.png">
+     
     </div>
     </div>
     <div id="menu1" class="tab-pane fade">
       <h3 class="heading">My Dashboard</h3>
-      <div class="img_logic">
+      <div class="img_logic logic">
       <img class="logo-mychart" src="images/home1.png">
       <img class="logo-mychart" src="images/home3.png">
       <img class="logo-mychart" src="images/home2.png">
@@ -108,17 +122,46 @@ input[type=text]:focus {
       <img class="logo-mychart" src="images/home2.png">
     </div>
    </div>
-    <div id="menu2" class="tab-pane fade in active">
+   
+   <div id="profile" class="tab-pane fade in active">
+      <h3 class="heading">Profile</h3>
+      <div class="img_logic logic">
+       <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="well well-sm">
+                <div class="row">
+                    <div class="col-sm-6 col-md-4 pro-profile">
+                        <img src="images/photo.jpg" alt="" class="img-rounded img-responsive" width="150" height="150" />
+                    </div>
+                    <div class="col-sm-6 col-md-8">
+                        <h4>Mark</h4>
+                        <small class="font-sizze"><cite title="San Francisco, USA" style="font-size: 20px;">San Francisco, USA <i class="glyphicon glyphicon-map-marker">
+                        </i></cite></small>
+                        <p>
+                            <i class="glyphicon glyphicon-envelope font-sizze" style="font-size: 15px;"> email@example.com</i>
+                            <br />
+                            <i class="glyphicon glyphicon-globe font-sizze"></i><a href="http://www.jquery2dotnet.com" style="font-size: 15px;">www.beecharts.com</a>
+                            <br />
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+   </div>
+   
+    <div id="menu2" class="tab-pane fade">
     	<div class="head">
       <div class="heading">
-      <h3 class="heading">My charts</h3>
+      <h3 class="heading">community</h3>
       </div>
       <div class="search">
 			<input type="text" class="form-control input-sm" maxlength="64" placeholder="Search" />
 			<button type="submit" class="btn btn-primary btn-sm">Search</button>
 		</div>
 		</div>
-	<div class="img_logic">
+	<div class="img_logic logic">
       <img class="logo-mychart" src="images/home1.png">
       <img class="logo-mychart" src="images/home3.png">
       <img class="logo-mychart" src="images/home2.png">
@@ -132,7 +175,7 @@ input[type=text]:focus {
     
     <div id="menu3" class="tab-pane fade">
       <h3 class="heading">Create a Chart</h3>
-      <div class="img_logic">
+      <div class="img_logic logic">
       <button class="chart-type-button dashboard-button md-whiteframe-2dp md-button ng-scope md-ink-ripple" type="button" ng-transclude="" ng-repeat="tile in allTiles.slice(0,5)" ng-click="showNewDialog($event, tile.provider, tile.metric)" aria-label="dashDB"> <p class="chart-title ng-binding ng-scope">dashDB</p><img class="logo-provider ng-scope" src="images/db2.png">
       	 </button>
       	
