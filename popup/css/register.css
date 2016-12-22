@@ -76,8 +76,8 @@ input, button {
 	padding:2px;
 	margin-left:15px;
 	display:inline;
-	height:auto;
-	width:60px;
+	height:70px;
+	width:200px;
 	float:left;	
 	margin-top:15px;
 }
@@ -87,8 +87,8 @@ input, button {
 	border-radius: 150px;
 	-webkit-border-radius: 150px;
 	-moz-border-radius: 150px;
-	margin-left:270px;;
-	margin-top:15px;
+	margin-left:240px;;
+	margin-top:30px;
 	box-shadow: 0 0 8px rgba(0, 0, 0, .8);
 	-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
 	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);

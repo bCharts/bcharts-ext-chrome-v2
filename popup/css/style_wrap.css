@@ -80,9 +80,10 @@ input, button {
 	padding:2px;
 	margin-left:15px;
 	display:inline;
-	height:auto;
-	width:60px;
-	float:left;	
+	height:70px;
+	width:200px;
+	float:left;
+	margin-bottom:20px;	
 }
 .logo-top {
 	font-size:30px;
