@@ -26,9 +26,6 @@ var cropinterface = {
         var cropinterface_css = chrome.extension.getURL('pulltable/css/cropinterface.css');
         $(document.body).append('<link name="' + gid_cropinterface + '" href="' + cropinterface_css + '" rel="stylesheet">');
 
-        var excel_css = chrome.extension.getURL('pulltable/css/excel-2000.css');
-        $(document.body).append('<link name="' + gid_cropinterface + '" href="' + excel_css + '" rel="stylesheet">');
-
         $(cropinterface.s_area.html()).appendTo(document.body).hide();
         $(cropinterface.left_area.html()).appendTo(document.body).hide();
         $(cropinterface.top_area.html()).appendTo(document.body).hide();
