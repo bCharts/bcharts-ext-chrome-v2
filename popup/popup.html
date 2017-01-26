@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Bee Chart</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://api.beta.bcharts.xyz/users/login ">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
     <link rel='stylesheet prefetch' href="css/font.css">
     <link rel="stylesheet" href="css/style_wrap.css">
@@ -52,13 +53,12 @@
             <div class="or-txt">OR</div>
 
             <div class="login__form">
-                <form method="post" name="formtag" action="profile.html">
+                <div name="formtag">
                     <div class="login__row" style="">
-
 
                         <img src="images/user.png" class="user_icon"/>
 
-                        <input name="username" type="text" class="login__input" placeholder="Username"/>
+                        <input name="email" id="uname" type="text" class="login__input" placeholder="Username"/>
 
                     </div>
 
@@ -66,15 +66,19 @@
 
                         <img src="images/pass.png" class="user_icon"/>
 
-                        <input name="password" type="password" class="login__input pass" placeholder="Password"/>
+                        <input name="password" type="password" id="pass" class="login__input pass" placeholder="Password"/>
 
                     </div>
-                    <p class="login__forget"><a href="register.html">Forget Password?</a></p>
 
-                    <button type="submit" class="btn btn-success outline sharp login__submit" name="submit">Sign In
-                    </button>
+                    <div style="font-size: 13px;color:red;opacity:0" id="login_err">
+                    Incorrect login/password combination
+                    </div>
+                
+                    <p class="login__forget"><a href="register.html">Forgot Password?</a></p>
+
+                    <button class="btn btn-success outline sharp login__submit" id="signin">Sign In</button>
                     <p class="login__signup">Don't have an account? &nbsp;<a href="register.html">Sign up</a></p>
-                </form>
+                </div>
                 <!-- <div class="btn-group">
                   <button type="button" class="btn btn-primary btn-down">Screenshot Data</button>
                   <button type="button" class="btn btn-primary btn-down">HTML Data</button>
@@ -96,9 +100,8 @@
 
 </div>
 
-<script src="js/jquery.js"></script>
-<script src="js/popup.js"></script>
-<!-- <script src="js/index.js"></script> -->
+ <script src="js/jquery.js"></script>
+ <script src="js/popup.js"></script>
 
 </body>
 

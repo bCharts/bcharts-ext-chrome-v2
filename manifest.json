@@ -12,6 +12,7 @@
     "default_title": "bCharts.xyz - Chart Anything"
   },
   "permissions": [
+    "https://api.beta.bcharts.xyz/users/login/*",
     "http://*/*",
     "https://*/*",
     "<all_urls>",

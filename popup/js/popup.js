@@ -126,4 +126,58 @@ $(document).ready(function () {
     })
 });
 
+$("#signin").click(function(){
+  var p_email = $("#uname").val();
+  var p_pass = $("#pass").val();
+  console.log(p_email);
+  console.log(p_pass);
+ $.ajax({
+                url: 'https://api.beta.bcharts.xyz/users/login',
+                type: 'POST',
+                //async: false,
+                crossDomain: true,
+                dataType: "json",
+            contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                data: {
+                    email: p_email,
+                    password: p_pass
+                },
+                success: function (data, textStatus, jqXHR) {
+                    console.log(data.client_id);
+                    var str = "Token token="+data.client_id+":"+data.secret;
+                    request_charts(str);
 
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.log(textStatus);
+                    console.log(jqXHR);
+                     $( "#login_err" ).css({opacity:1})
+                     $( "#login_err" ).delay( 2000 ).animate({
+                       opacity: 0
+                      }, 500, "linear", function() {
+                
+                    });
+                }
+        });
+            
+});
+
+
+function request_charts(str){
+
+  var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.beta.bcharts.xyz/charts",
+  "method": "GET",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": str
+  }
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response.charts[1]);
+  window.location.href = "profile.html";
+});
+}
