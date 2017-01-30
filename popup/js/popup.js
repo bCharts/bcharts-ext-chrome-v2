@@ -116,6 +116,23 @@ $(document).on("click", "#parseButton", function () {
     window.close();
 });
 
+$(document).on("click", "#uploadFile", function () {
+
+    chrome.tabs.getSelected(null, function (tab) {
+        chrome.tabs.sendMessage(tab.id, {message: "uploadFile"});
+    });
+    chrome.tabs.executeScript(null, {
+        file: 'uploadfile/js/fileselection.js'
+    }, function () {
+        if (chrome.extension.lastError) {
+            console.log(chrome.extension.lastError.message);
+        }
+
+
+    });
+    window.close();
+});
+
 $(document).ready(function () {
     $('#login-trigger').click(function () {
         $(this).next('#login-content').slideToggle();

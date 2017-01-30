@@ -30,13 +30,15 @@
         "parsehtml/js/jquery.js",
         "parsehtml/js/main.js",
         "parsehtml/js/jquery.tableCSVExport.js",
-        "parsehtml/js/toastr.js"
+        "parsehtml/js/toastr.js",
+        "uploadfile/js/main.js"
       ]
     }
   ],
   "web_accessible_resources": [
     "*.png",
     "parsehtml/css/background.css",
+    "uploadfile/css/background.css",
     "pulltable/images/cancel.png",
     "pulltable/images/ok.png",
     "pulltable/images/close.png",
@@ -48,7 +50,8 @@
     "scripts": [
       "pulltable/js/jquery.js",
       "pulltable/js/background.js",
-      "parsehtml/js/background.js"
+      "parsehtml/js/background.js",
+      "uploadfile/js/background.js"
     ]
   }
 }
