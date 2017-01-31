@@ -25,13 +25,25 @@
       ],
       "css": [
         "parsehtml/css/toastr.scss"
-    ],
+      ],
       "js": [
         "parsehtml/js/jquery.js",
         "parsehtml/js/main.js",
         "parsehtml/js/jquery.tableCSVExport.js",
         "parsehtml/js/toastr.js",
         "uploadfile/js/main.js"
+      ]
+    },
+    {
+      "matches": [
+        "https://twitter.com/*"
+      ],
+      "css": [
+        "sentiment/css/bc_hashtag.css"
+      ],
+      "js": [
+        "sentiment/js/jquery-3.1.1.js",
+        "sentiment/js/bc_injector.js"
       ]
     }
   ],
@@ -44,14 +56,22 @@
     "pulltable/images/close.png",
     "pulltable/images/flybeefly.gif",
     "pulltable/css/cropinterface.css",
-    "pulltable/css/excel-2000.css"
+    "pulltable/css/excel-2000.css",
+    "sentiment/js/bc_hashtag.js",
+    "sentiment/images/flybeefly.gif"
   ],
   "background": {
     "scripts": [
       "pulltable/js/jquery.js",
       "pulltable/js/background.js",
       "parsehtml/js/background.js",
-      "uploadfile/js/background.js"
+      "uploadfile/js/background.js",
+      "sentiment/js/background.js"
+    ]
+  },
+  "externally_connectable": {
+    "matches": [
+      "https://twitter.com/*"
     ]
   }
 }

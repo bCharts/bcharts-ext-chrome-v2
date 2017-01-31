@@ -12,10 +12,7 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
     switch (msg.type) {
         case 'pulltable':
             $.ajax({
-                // url: 'http://bcdev.mybluemix.net/pulltableocrwebservice',
                 url: 'http://bcdev.mybluemix.net/pulltable',
-                // url: 'http://127.0.0.1:8000/pulltablegoogle',
-                // url: 'http://127.0.0.1:8000/pulltableocrwebservice',
                 // url: 'http://127.0.0.1:8000/pulltable',
                 method: 'POST',
                 async: false,
